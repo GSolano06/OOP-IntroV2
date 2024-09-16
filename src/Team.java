@@ -15,13 +15,13 @@ public class Team {
     System.out.println("Team: "+ name +" Home: " + home + " Sport: "+ sport +" League: " + league + " Current Players: " + numPlayers +" Coaches: "+ numCoaches);
 
     };
-    void updateRecord(boolean gameWon) {
-        if (gameWon=true) {
-            winRecord = winRecord + 1;
-        } else {
-            lossRecord=lossRecord+1;
-        }
-    }
+   // void updateRecord(boolean gameWon) {
+     //   if (gameWon=true) {
+     //       winRecord = winRecord + 1;
+      //  } else {
+      //      lossRecord=lossRecord+1;
+      //  }
+   // }
    // void addPlayer(Player newPlayer){
     //};
 }
