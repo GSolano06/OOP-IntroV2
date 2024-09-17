@@ -1,30 +1,61 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        Team GoldenStateWarriors = new Team();
 
         Player player1 = new Player();
-player1.firstName = "Steph";
-player1.lastName = "Curry";
-player1.team = GoldenStateWarriors;
-player1.position = "PG";
-player1.sport = "Basketball";
-player1.jerseyNum = 30;
+        Team team1 = new Team();
+
+        player1.firstName = "Steph";
+        player1.lastName = "Curry";
+        player1.team = team1;
+        player1.position = "PG";
+        player1.sport = "Basketball";
+        player1.jerseyNum = 30;
 
 
+        team1.name = "Golden State Warriors";
+        team1.home = "San Francisco";
+        team1.numPlayers = 22;
+        team1.league ="NBA";
+        team1.sport = "Basketball";
+        team1.college = false;
+        team1.numCoaches = 10;
 
-GoldenStateWarriors.name = "Golden State Warriors";
-GoldenStateWarriors.home = "San Francisco";
-GoldenStateWarriors.numPlayers = 22;
-GoldenStateWarriors.league ="NBA";
-GoldenStateWarriors.sport = "Basketball";
-GoldenStateWarriors.college = false;
-GoldenStateWarriors.numCoaches = 10;
+        Coach coach1 = new Coach();
+        coach1.name = "Steve Kerr";
+        coach1.team = team1;
+        coach1.salary = 17500000;
+        coach1.yearsCoaching = 10;
+        coach1.exPlayer = true;
 
-        player1.describe();
+        Scanner myTextScanner = new Scanner(System.in);  // Create a Scanner object
+        boolean stillAsk = true;
+        while (stillAsk) {
+            System.out.println("");
+            System.out.print("Coach Name: ");
+            String nameTyped = myTextScanner.nextLine();  // Read user input
+            System.out.println(" THANKS!");
 
-        GoldenStateWarriors.describe();
+            if (nameTyped.equals("DONE")) {
+                stillAsk = false;
+                continue;
+            }
+
+            Coach coachFound = null;
+            if (coach1.nameMatches(nameTyped)) {
+                coachFound = coach1;
+            }
+
+            if (coachFound == null) {
+                System.out.println("Coach, " + nameTyped + " not found! Can't produce info!");
+            } else {
+                coachFound.describe();
+                player1.describe();
+                team1.describe();
+
+            }
+        }
     }
 }
+
