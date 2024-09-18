@@ -13,7 +13,7 @@ public class Team {
     int winRecord;
     int lossRecord;
     String cheer;
-
+    Player newPlayer1;
 
     void describe(){
     System.out.println("Team: "+ name +" Home: " + home + " Sport: "+ sport +" League: " + league + " Current Players: " + numPlayers +" Coaches: "+ numCoaches);
@@ -36,5 +36,10 @@ public class Team {
             lossRecord=lossRecord+1;
             System.out.println("Sucks to suck! New Record: " + winRecord + " " + lossRecord);
         }
+    }
+    void addPlayerToRoster(Player newPlayer){
+        System.out.println("Add a new player to " + name + ". Type player last name below:");
+        newPlayer1 = newPlayer;
+        System.out.println(newPlayer.lastName + " added to " + name);
     }
 }

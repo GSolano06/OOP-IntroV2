@@ -17,12 +17,12 @@ public class Main {
         team1.name = "Golden State Warriors";
         team1.home = "San Francisco";
         team1.numPlayers = 22;
-        team1.league ="NBA";
+        team1.league = "NBA";
         team1.sport = "Basketball";
         team1.college = false;
         team1.numCoaches = 10;
-        team1.winRecord =1;
-        team1.lossRecord =1;
+        team1.winRecord = 1;
+        team1.lossRecord = 1;
         team1.cheer = "Let's Go Warriors!";
 
         Coach coach1 = new Coach();
@@ -58,9 +58,10 @@ public class Main {
                 player1.describe();
                 team1.describe();
                 team1.updateRecord();
+                team1.addPlayerToRoster(player1);
+
 
             }
         }
     }
 }
-
