@@ -34,7 +34,7 @@ public class Main {
 
 
         Scanner myTextScanner = new Scanner(System.in);  // Create a Scanner object
-        boolean stillAsk = true;
+      /*  boolean stillAsk = true;
         while (stillAsk) {
             System.out.println("");
             System.out.print("Coach Name: ");
@@ -62,6 +62,12 @@ public class Main {
 
 
             }
-        }
+        }*/
+
+        player1.describe();
+        team1.describe();
+        team1.updateRecord();
+        player1.makeCaptain();
+        team1.addPlayerToRoster(player1);
     }
 }
