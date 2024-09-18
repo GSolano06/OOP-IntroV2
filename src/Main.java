@@ -22,6 +22,9 @@ public class Main {
         team1.sport = "Basketball";
         team1.college = false;
         team1.numCoaches = 10;
+        team1.winRecord = 1;
+        team1.lossRecord = 1;
+        team1.cheer = "Let's Go Warriors!";
 
         team2.name = "Seventy Sixers";
         team2.home = "Philadelphia";
@@ -37,6 +40,7 @@ public class Main {
         coach1.salary = 17500000;
         coach1.yearsCoaching = 10;
         coach1.exPlayer = true;
+
 
         Scanner myTextScanner = new Scanner(System.in);  // Create a Scanner object
         boolean stillAsk = true;
@@ -65,8 +69,8 @@ public class Main {
 
                 player1.describe();
                 team1.describe();
-                coach1.update(team2);
-                coach1.describe();
+                team1.updateRecord();
+                team1.addPlayerToRoster(player1);
 
 
             }
