@@ -17,10 +17,13 @@ public class Main {
         team1.name = "Golden State Warriors";
         team1.home = "San Francisco";
         team1.numPlayers = 22;
-        team1.league ="NBA";
+        team1.league = "NBA";
         team1.sport = "Basketball";
         team1.college = false;
         team1.numCoaches = 10;
+        team1.winRecord = 1;
+        team1.lossRecord = 1;
+        team1.cheer = "Let's Go Warriors!";
 
         Coach coach1 = new Coach();
         coach1.name = "Steve Kerr";
@@ -28,6 +31,7 @@ public class Main {
         coach1.salary = 17500000;
         coach1.yearsCoaching = 10;
         coach1.exPlayer = true;
+
 
         Scanner myTextScanner = new Scanner(System.in);  // Create a Scanner object
         boolean stillAsk = true;
@@ -53,9 +57,11 @@ public class Main {
                 coachFound.describe();
                 player1.describe();
                 team1.describe();
+                team1.updateRecord();
+                team1.addPlayerToRoster(player1);
+
 
             }
         }
     }
 }
-
