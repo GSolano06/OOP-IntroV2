@@ -5,6 +5,7 @@ public class Main {
 
         Player player1 = new Player();
         Team team1 = new Team();
+        Team team2 = new Team();
 
         player1.firstName = "Steph";
         player1.lastName = "Curry";
@@ -21,6 +22,14 @@ public class Main {
         team1.sport = "Basketball";
         team1.college = false;
         team1.numCoaches = 10;
+
+        team2.name = "Seventy Sixers";
+        team2.home = "Philadelphia";
+        team2.numPlayers = 25;
+        team2.league ="NBA";
+        team2.sport = "Basketball";
+        team2.college = false;
+        team2.numCoaches = 11;
 
         Coach coach1 = new Coach();
         coach1.name = "Steve Kerr";
@@ -51,8 +60,14 @@ public class Main {
                 System.out.println("Coach, " + nameTyped + " not found! Can't produce info!");
             } else {
                 coachFound.describe();
+                coachFound.reasign(team2);
+
+
                 player1.describe();
                 team1.describe();
+                coach1.update(team2);
+                coach1.describe();
+
 
             }
         }

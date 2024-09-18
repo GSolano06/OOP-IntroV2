@@ -13,9 +13,20 @@ public class Coach {
         }
         return false;
     }
+    boolean update(Team otherTeam) {
+        if (team.name.equalsIgnoreCase(otherTeam.name)) {
+            return true;
+        }
+        return false;
+    }
 
     void describe() {
-        System.out.println(" Coach info: " + name + ", is the coach of the " + team.name + ". They have been coaching for " + yearsCoaching + " years. Their salary is " + salary + " a year. Ex-Player = " + exPlayer + ".");
+        System.out.println("Coach info: " + name + ", is the coach of the " + team.name + ". They have been coaching for " + yearsCoaching + " years. Their salary is " + salary + " a year. Ex-Player = " + exPlayer + ".");
+    }
+
+
+    void reasign( Team newTeam) {
+        team = newTeam;
     }
 
 }
