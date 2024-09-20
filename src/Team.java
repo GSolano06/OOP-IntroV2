@@ -24,8 +24,6 @@ public class Team {
         String update = myTextScanner.nextLine();
         System.out.print("Update Record. Game Won or lost?");
 
-
-
         if (update.contains("W") || update.contains ("w")){
             gameWon=true;
             winRecord = winRecord + 1;
