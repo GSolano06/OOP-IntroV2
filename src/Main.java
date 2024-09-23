@@ -2,23 +2,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner myTextScanner = new Scanner(System.in);
 
-        Player player1 = new Player();
         Team team1 = new Team();
         Team team2 = new Team();
+        Player player1 = new Player("Steph", "Curry", 30, team1, "Point Guard" );
 
-        player1.firstName = "Steph";
-        player1.lastName = "Curry";
-        player1.team = team1;
-        player1.position = "PG";
-        player1.sport = "Basketball";
-        player1.jerseyNum = 30;
 
 
         team1.name = "Golden State Warriors";
         team1.home = "San Francisco";
         team1.numPlayers = 22;
-        team1.league ="NBA";
+        team1.league = "NBA";
         team1.sport = "Basketball";
         team1.college = false;
         team1.numCoaches = 10;
@@ -36,8 +31,7 @@ public class Main {
 
         Coach coach1 = new Coach("Steve Kerr",team1, 17500000, 10,true );
 
-
-        Scanner myTextScanner = new Scanner(System.in);  // Create a Scanner object
+       /* Scanner myTextScanner = new Scanner(System.in);  // Create a Scanner object
         boolean stillAsk = true;
         while (stillAsk) {
             System.out.println("");
@@ -64,12 +58,16 @@ public class Main {
 
                 player1.describe();
                 team1.describe();
-                team1.updateRecord();
-                team1.addPlayerToRoster(player1);
-
 
             }
         }
+
+        */
+        player1.describe();
+        team1.describe();
+        team1.updateRecord();
+        player1.makeCaptain(myTextScanner);
+
     }
 }
 
