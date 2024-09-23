@@ -31,7 +31,6 @@ public class Main {
 
         Coach coach1 = new Coach("Steve Kerr",team1, 17500000, 10,true );
 
-       /* Scanner myTextScanner = new Scanner(System.in);  // Create a Scanner object
         boolean stillAsk = true;
         while (stillAsk) {
             System.out.println("");
@@ -62,7 +61,7 @@ public class Main {
             }
         }
 
-        */
+
         player1.describe();
         team1.describe();
         team1.updateRecord();
