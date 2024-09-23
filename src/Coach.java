@@ -15,7 +15,7 @@ public class Coach {
     }
 
     void describe() {
-        System.out.println(" Coach info: " + name + ", is the coach of the " + team.name + ". They have been coaching for " + yearsCoaching + " years. Their salary is " + salary + " a year. Ex-Player = " + exPlayer + ".");
+        System.out.println(" Coach info: " + name + ", is the coach of the " + team.getName() + ". They have been coaching for " + yearsCoaching + " years. Their salary is " + salary + " a year. Ex-Player = " + exPlayer + ".");
     }
 
 }

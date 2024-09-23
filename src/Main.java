@@ -4,7 +4,12 @@ public class Main {
     public static void main(String[] args) {
 
         Player player1 = new Player();
-        Team team1 = new Team();
+
+
+
+
+
+      Team team1 = new Team("NBA", "Basketball", false, "Golden State Warriors", 22,10,"San Francisco,",1, 1,"Go Warriors!");
 
         player1.firstName = "Steph";
         player1.lastName = "Curry";
@@ -12,18 +17,6 @@ public class Main {
         player1.position = "PG";
         player1.sport = "Basketball";
         player1.jerseyNum = 30;
-
-
-        team1.name = "Golden State Warriors";
-        team1.home = "San Francisco";
-        team1.numPlayers = 22;
-        team1.league = "NBA";
-        team1.sport = "Basketball";
-        team1.college = false;
-        team1.numCoaches = 10;
-        team1.winRecord = 1;
-        team1.lossRecord = 1;
-        team1.cheer = "Let's Go Warriors!";
 
         Coach coach1 = new Coach();
         coach1.name = "Steve Kerr";

@@ -11,7 +11,7 @@ public class Player {
     boolean captain;
 
         void describe(){
-            System.out.println("Player:" + firstName + " " + lastName + ", " + "Jersey #:" + jerseyNum + ", " + "Position:" + position +", " + "Team:" + team.name);
+            System.out.println("Player:" + firstName + " " + lastName + ", " + "Jersey #:" + jerseyNum + ", " + "Position:" + position +", " + "Team:" + team.getName());
         }
 
         void makeCaptain(){
