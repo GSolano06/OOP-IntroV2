@@ -34,12 +34,7 @@ public class Main {
         team2.college = false;
         team2.numCoaches = 11;
 
-        Coach coach1 = new Coach();
-        coach1.name = "Steve Kerr";
-        coach1.team = team1;
-        coach1.salary = 17500000;
-        coach1.yearsCoaching = 10;
-        coach1.exPlayer = true;
+        Coach coach1 = new Coach("Steve Kerr",team1, 17500000, 10,true );
 
 
         Scanner myTextScanner = new Scanner(System.in);  // Create a Scanner object

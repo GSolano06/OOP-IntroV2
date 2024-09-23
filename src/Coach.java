@@ -1,11 +1,19 @@
 public class Coach {
     // fields
-    String name;
-    Team team;
-    int salary;
-    int yearsCoaching;
-    boolean exPlayer;
+    private String name;
+    private Team team;
+    private int salary;
+    private int yearsCoaching;
+    private boolean exPlayer;
 
+    public Coach(String name, Team team, int salary, int yearsCoaching, boolean exPlayer) {
+
+    this.name = name;
+    this.team = team;
+    this.salary = salary;
+    this.yearsCoaching = yearsCoaching;
+    this.exPlayer = exPlayer;
+}
     //methods
     boolean nameMatches(String searchText) {
         if (name.equalsIgnoreCase(searchText)) {
