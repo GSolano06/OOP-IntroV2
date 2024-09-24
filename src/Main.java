@@ -32,6 +32,9 @@ public class Main {
             } else {
                 coachFound.describe();
                 coachFound.reasign(team2);
+                coachFound.reasign(team2);
+
+
                 player1.describe();
                 team1.describe();
 
