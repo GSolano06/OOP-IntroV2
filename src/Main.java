@@ -5,10 +5,6 @@ public class Main {
 
         Player player1 = new Player();
 
-
-
-
-
       Team team1 = new Team("NBA", "Basketball", false, "Golden State Warriors", 22,10,"San Francisco,",1, 1,"Go Warriors!");
 
         player1.firstName = "Steph";
