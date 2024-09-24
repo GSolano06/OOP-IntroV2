@@ -2,28 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        Player player1 = new Player();
+        Scanner myTextScanner = new Scanner(System.in);
 
       Team team1 = new Team("NBA", "Basketball", false, "Golden State Warriors", 22,10,"San Francisco,",1, 1,"Go Warriors!");
+      Team team2 = new Team("NFL","Football",false,"Eagles", 53,24,"Philadelphia",1,1,"Go Eagles!");
+      Player player1 = new Player("Steph", "Curry", 30, team1, "Point Guard" );
 
-        player1.firstName = "Steph";
-        player1.lastName = "Curry";
-        player1.team = team1;
-        player1.position = "PG";
-        player1.sport = "Basketball";
-        player1.jerseyNum = 30;
+        Coach coach1 = new Coach("Steve Kerr",team1, 17500000, 10,true );
 
-        Coach coach1 = new Coach();
-        coach1.name = "Steve Kerr";
-        coach1.team = team1;
-        coach1.salary = 17500000;
-        coach1.yearsCoaching = 10;
-        coach1.exPlayer = true;
-
-
-        Scanner myTextScanner = new Scanner(System.in);  // Create a Scanner object
-      /*  boolean stillAsk = true;
+        boolean stillAsk = true;
         while (stillAsk) {
             System.out.println("");
             System.out.print("Coach Name: ");
@@ -44,19 +31,19 @@ public class Main {
                 System.out.println("Coach, " + nameTyped + " not found! Can't produce info!");
             } else {
                 coachFound.describe();
+                coachFound.reasign(team2);
                 player1.describe();
                 team1.describe();
-                team1.updateRecord();
-                team1.addPlayerToRoster(player1);
-
 
             }
-        }*/
-
+        }
         player1.describe();
         team1.describe();
         team1.updateRecord();
-        player1.makeCaptain();
-        team1.addPlayerToRoster(player1);
-    }
-}
+        player1.makeCaptain(myTextScanner);
+
+            }
+        }
+
+
+

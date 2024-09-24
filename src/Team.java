@@ -78,8 +78,8 @@ public class Team {
 
     void updateRecord() {
         boolean gameWon;
-        String update = myTextScanner.nextLine();
         System.out.print("Update Record. Game Won or lost?");
+        String update = myTextScanner.nextLine();
 
         if (update.contains("W") || update.contains ("w")){
             gameWon=true;
@@ -92,9 +92,11 @@ public class Team {
             System.out.println("Sucks to suck! New Record: " + winRecord + " " + lossRecord);
         }
     }
+
     void addPlayerToRoster(Player newPlayer){
         System.out.println("Add a new player to " + name + ". Type player last name below:");
         newPlayer1 = newPlayer;
-        System.out.println(newPlayer.lastName + " added to " + name);
+        System.out.println(newPlayer.getLastName() + " added to " + name);
     }
+
 }
