@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+
 
 public class Team {
   private  Scanner myTextScanner = new Scanner(System.in);
@@ -13,64 +15,30 @@ public class Team {
     private int winRecord;
     private int lossRecord;
     private String cheer;
-    private Player newPlayer1;
+    private ArrayList<Player> allPlayers;
 
     public String getLeague() {
-        return league;
-    }
-
+        return league;}
     public String getCheer() {
-        return cheer;
-    }
-
+        return cheer;}
     public int getLossRecord() {
-        return lossRecord;
-    }
-
+        return lossRecord;}
     public int getWinRecord() {
-        return winRecord;
-    }
-
+        return winRecord;}
     public String getHome() {
-        return home;
-    }
-
+        return home;}
     public int getNumCoaches() {
-        return numCoaches;
-    }
-
+        return numCoaches;}
     public int getNumPlayers() {
-        return numPlayers;
-    }
-
+        return numPlayers;}
     public String getName() {
-        return name;
-    }
-
+        return name;}
     public boolean isCollege() {
-        return college;
-    }
-
+        return college;}
     public String getSport() {
-        return sport;
-    }
-
+        return sport;}
     public Scanner getMyTextScanner() {
-        return myTextScanner;
-    }
-
-    public Team(String league, String sport, boolean college, String name, int numPlayers, int numCoaches, String home, int winRecord, int lossRecord, String cheer) {
-        this.league = league;
-        this.sport = sport;
-        this.college = college;
-        this.name = name;
-        this.numPlayers = numPlayers;
-        this.numCoaches = numCoaches;
-        this.home = home;
-        this.winRecord = winRecord;
-        this.lossRecord = lossRecord;
-        this.cheer = cheer;
-    }
+        return myTextScanner;}
 
     void describe(){
     System.out.println("Team: "+ name +" Home: " + home + " Sport: "+ sport +" League: " + league + " Current Players: " + numPlayers +" Coaches: "+ numCoaches);
@@ -94,9 +62,27 @@ public class Team {
     }
 
     void addPlayerToRoster(Player newPlayer){
-        System.out.println("Add a new player to " + name + ". Type player last name below:");
-        newPlayer1 = newPlayer;
+        System.out.println("Adding a new player to " + name);
+        allPlayers.add(newPlayer);
         System.out.println(newPlayer.getLastName() + " added to " + name);
+    }
+
+    public String toString (){
+        return "Team: "+ name +" Home: " + home + " Sport: "+ sport +"\n League: " + league + " Current Players: " + numPlayers +" Coaches: "+ numCoaches + " Notable Players: " + this.allPlayers.getLast();
+    }
+
+    public Team(String league, String sport, boolean college, String name, int numPlayers, int numCoaches, String home, int winRecord, int lossRecord, String cheer) {
+        this.league = league;
+        this.sport = sport;
+        this.college = college;
+        this.name = name;
+        this.numPlayers = numPlayers;
+        this.numCoaches = numCoaches;
+        this.home = home;
+        this.winRecord = winRecord;
+        this.lossRecord = lossRecord;
+        this.cheer = cheer;
+        this.allPlayers = new ArrayList<>();
     }
 
 }
