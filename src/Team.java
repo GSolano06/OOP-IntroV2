@@ -1,5 +1,5 @@
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Team {
@@ -67,8 +67,8 @@ public class Team {
         System.out.println(newPlayer.getLastName() + " added to " + name);
     }
 
-    public String toString (){
-        return "Team: "+ name +" Home: " + home + " Sport: "+ sport +"\n League: " + league + " Current Players: " + numPlayers +" Coaches: "+ numCoaches + " Notable Players: " + this.allPlayers.getLast();
+    public String toString() {
+        return "Team: "+ name +" Home: " + home + " Sport: "+ sport +"\n League: " + league + " Current Players: " + numPlayers +" Coaches: "+ numCoaches + " Notable Players: " + this.allPlayers.get(allPlayers.size() - 1);
     }
 
     public Team(String league, String sport, boolean college, String name, int numPlayers, int numCoaches, String home, int winRecord, int lossRecord, String cheer) {

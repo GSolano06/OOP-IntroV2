@@ -23,6 +23,8 @@ public class Main {
 
         boolean stillAsk = true;
        /* while (stillAsk) {
+       /* boolean stillAsk = true;
+        while (stillAsk) {
             System.out.println("");
             System.out.print("Coach Name: ");
             String nameTyped = myTextScanner.nextLine();  // Read user input
@@ -53,16 +55,21 @@ public class Main {
        // }
 
         for (Player player : allPlayers){
-            if (player.getTeam() == team1){
+            if (player.getCurrentTeam() == team1){
                 team1.addPlayerToRoster(player);
-            } else if (player.getTeam() == team2) {
+            } else if (player.getCurrentTeam() == team2) {
                 team2.addPlayerToRoster(player);
             }
         }
+
+        player1.addTeam(team1);
+        System.out.println(player2);
         System.out.println(team1);
-        player1.describe();
+        player1.addTeam(team1);
         team1.describe();
+        player1.teamHistory();
         team1.updateRecord();
+
         player1.makeCaptain(myTextScanner);
 
             }

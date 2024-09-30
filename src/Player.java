@@ -1,11 +1,13 @@
+import java.util.ArrayList;
 import java.util.Scanner;
  class Player {
     //Fields
+    private ArrayList<Team> myTeamHistory;
     private Scanner myTextScanner = new Scanner(System.in);
     private int jerseyNum;
     //Team team;
     private String position;
-    private Team team;
+    private Team currentTeam;
     private int yearsPlaying;
     private String sport;
     private String firstName;
@@ -19,12 +21,19 @@ import java.util.Scanner;
          this.firstName = firstName;
          this.lastName = lastName;
          this.jerseyNum = jerseyNum;
-         this.team = team;
+         this.currentTeam = team;
          this.position = position;
-
+         this.myTeamHistory = new ArrayList<Team>();
      }
-     //Getters and Setters
 
+     //Getters and Setters
+     public ArrayList<Team> getAllTeamHistory() {
+         return myTeamHistory;
+     }
+
+     public void setAllTeamHistory(ArrayList<Team> allTeamHistory) {
+         this.myTeamHistory = myTeamHistory;
+     }
 
      public int getJerseyNum() {
          return jerseyNum;
@@ -42,12 +51,12 @@ import java.util.Scanner;
          this.position = position;
      }
 
-     public Team getTeam() {
-         return team;
+     public Team getCurrentTeam() {
+         return currentTeam;
      }
 
-     public void setTeam(Team team) {
-         this.team = team;
+     public void setCurrentTeam(Team currentTeam) {
+         this.currentTeam = currentTeam;
      }
 
      public int getYearsPlaying() {
@@ -82,27 +91,50 @@ import java.util.Scanner;
          this.captain = captain;
      }
 
+     public Scanner getMyTextScanner() {
+         return myTextScanner;
+     }
+
+     public void setMyTextScanner(Scanner myTextScanner) {
+         this.myTextScanner = myTextScanner;
+     }
+
+     public String getSport() {
+         return sport;
+     }
+
+     public void setSport(String sport) {
+         this.sport = sport;
+     }
+
      //Methods
     void describe(){
         if(captain == true) {
-            System.out.print("Player:" + firstName + " " + lastName + ", " + "Jersey #:" + jerseyNum + ", " + "Position:" + position + ", " + "Team:" + team.getName() + ",");
+            System.out.print("Player:" + firstName + " " + lastName + ", " + "Jersey #:" + jerseyNum + ", " + "Position:" + position + ", " + "Team:" + currentTeam.getName() + ",");
             System.out.println("Captain:Yes");
         }else{
-            System.out.println("Player:" + firstName + " " + lastName + ", " + "Jersey #:" + jerseyNum + ", " + "Position:" + position + ", " + "Team:" + team.getName() + ",");
+            System.out.println("Player:" + firstName + " " + lastName + ", " + "Jersey #:" + jerseyNum + ", " + "Position:" + position + ", " + "Team:" + currentTeam.getName() + ",");
             System.out.println("Captain:no");
         }
     }
 
+    void addTeam(Team team) {
+         this.myTeamHistory.add(team);
+    }
+
+    public String toString(){
+         return "Player " + this.firstName + " " + this.lastName + " is number " + this.jerseyNum + " on the " + currentTeam.getName() + "!";
+    }
 
 
     void makeCaptain(Scanner scanner){
-        System.out.println("Would you like to make " + firstName + " " + lastName + " a captain for " + team.getName() + ", Yes or no?");
+        System.out.println("Would you like to make " + firstName + " " + lastName + " a captain for " + currentTeam.getName() + ", Yes or no?");
         String answerTyped = myTextScanner.nextLine();
-        if(answerTyped == "Yes"){
+        if(answerTyped.equalsIgnoreCase("Yes")){
             System.out.println("Congratulations to " + lastName + " on becoming a captain!");
         }
 
-        if(answerTyped == "No"){
+        if(answerTyped.contains("No")){
             System.out.println(("Unfortunate, try again next time pal."));
         }
 
@@ -111,8 +143,19 @@ import java.util.Scanner;
 
     void joinCheer() {
         if (captain == true) {
-             System.out.println(team.getCheer());
+             System.out.println(currentTeam.getCheer());
 
         }
+    }
+    void teamHistory(){
+         System.out.println("Would you like to know " + this.lastName + " team history?");
+         String yesOrNo = myTextScanner.nextLine();
+         if(yesOrNo.contains("Yes")){
+             System.out.println(myTeamHistory);
+
+         }else{
+             System.out.println("Okay!");
+         }
+
     }
 }
