@@ -1,39 +1,28 @@
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
         Scanner myTextScanner = new Scanner(System.in);
 
-        Team team1 = new Team();
-        Team team2 = new Team();
+
+        Team team1 = new Team("NBA", "Basketball", false, "Golden State Warriors", 22, 10, "San Francisco,", 1, 1, "Go Warriors!");
+        Team team2 = new Team("NFL", "Football", false, "Eagles", 53, 24, "Philadelphia", 1, 1, "Go Eagles!");
         Player player1 = new Player("Steph", "Curry", 30, team1, "Point Guard");
-
-
-        team1.name = "Golden State Warriors";
-        team1.home = "San Francisco";
-        team1.numPlayers = 22;
-        team1.league = "NBA";
-        team1.sport = "Basketball";
-        team1.college = false;
-        team1.numCoaches = 10;
-        team1.winRecord = 1;
-        team1.lossRecord = 1;
-        team1.cheer = "Let's Go Warriors!";
-
-        team2.name = "Seventy Sixers";
-        team2.home = "Philadelphia";
-        team2.numPlayers = 25;
-        team2.league = "NBA";
-        team2.sport = "Basketball";
-        team2.college = false;
-        team2.numCoaches = 11;
-
-        ArrayList<Coach> allCoaches = new ArrayList<Coach>();
-        ArrayList<Team> allTeams = new ArrayList<Team>();
-
+        Player player2 = new Player("Draymond", "Green", 23, team1, "Center");
+        Player player3 = new Player("Jonathan", "Kuminga", 00, team1, "Power Forward");
+        Player player4 = new Player("Brandin", "Podziemski", 2, team1, "Shooting Guard");
+        Player player5 = new Player("Andrew", "Wiggins", 22, team1, "Small Forward");
+        ArrayList<Player> allPlayers = new ArrayList<>();
+        allPlayers.add(player1);
+        allPlayers.add(player2);
+        allPlayers.add(player3);
+        allPlayers.add(player4);
+        allPlayers.add(player5);
         Coach coach1 = new Coach("Steve Kerr", team1, 17500000, 10, true);
 
+        ArrayList<Coach> allCoaches = new ArrayList<>();
+        ArrayList<Team> allTeams = new ArrayList<>();
         allCoaches.add(coach1);
         allTeams.add(team1);
 
@@ -67,7 +56,7 @@ public class Main {
 
                                 }
                             }
-                            if (teamFound != null){
+                            if (teamFound != null) {
                                 coachFound.reasign(teamFound);
                             }
                         }
@@ -88,14 +77,26 @@ public class Main {
                     }
 
                 }
-
-
-                player1.describe();
-                team1.describe();
-                team1.updateRecord();
-                player1.makeCaptain(myTextScanner);
-
             }
+
+            for (Player player : allPlayers) {
+                if (player.getCurrentTeam() == team1) {
+                    team1.addPlayerToRoster(player);
+                } else if (player.getCurrentTeam() == team2) {
+                    team2.addPlayerToRoster(player);
+                }
+            }
+
+            player1.addTeam(team1);
+            System.out.println(player2);
+            System.out.println(team1);
+            player1.addTeam(team1);
+            team1.describe();
+            player1.teamHistory();
+            team1.updateRecord();
+
+            player1.makeCaptain(myTextScanner);
+
         }
     }
 }
