@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -6,8 +7,7 @@ public class Main {
 
         Team team1 = new Team();
         Team team2 = new Team();
-        Player player1 = new Player("Steph", "Curry", 30, team1, "Point Guard" );
-
+        Player player1 = new Player("Steph", "Curry", 30, team1, "Point Guard");
 
 
         team1.name = "Golden State Warriors";
@@ -24,49 +24,78 @@ public class Main {
         team2.name = "Seventy Sixers";
         team2.home = "Philadelphia";
         team2.numPlayers = 25;
-        team2.league ="NBA";
+        team2.league = "NBA";
         team2.sport = "Basketball";
         team2.college = false;
         team2.numCoaches = 11;
 
-        Coach coach1 = new Coach("Steve Kerr",team1, 17500000, 10,true );
+        ArrayList<Coach> allCoaches = new ArrayList<Coach>();
+        ArrayList<Team> allTeams = new ArrayList<Team>();
+
+        Coach coach1 = new Coach("Steve Kerr", team1, 17500000, 10, true);
+
+        allCoaches.add(coach1);
+        allTeams.add(team1);
 
         boolean stillAsk = true;
         while (stillAsk) {
-            System.out.println("");
-            System.out.print("Coach Name: ");
-            String nameTyped = myTextScanner.nextLine();  // Read user input
-            System.out.println(" THANKS!");
+            System.out.println("Search:");
 
-            if (nameTyped.equals("DONE")) {
-                stillAsk = false;
-                continue;
-            }
+            String command = myTextScanner.nextLine();  // Read user input
+            if (command.equalsIgnoreCase("COACH")) {
 
-            Coach coachFound = null;
-            if (coach1.nameMatches(nameTyped)) {
-                coachFound = coach1;
-            }
+                System.out.print("Coach Name: ");
+                String nameTyped = myTextScanner.nextLine();  // Read user input
 
-            if (coachFound == null) {
-                System.out.println("Coach, " + nameTyped + " not found! Can't produce info!");
-            } else {
-                coachFound.describe();
-                coachFound.reasign(team2);
+                Coach coachFound = null;
+                for (Coach coach : allCoaches) {
+                    if (coach.nameMatches(nameTyped)) {
+                        coachFound = coach;
+
+                        System.out.println("Command:");
+                        String command2 = myTextScanner.nextLine();  // Read user input
+                        if (command2.equalsIgnoreCase("UPDATE")) {
+                            System.out.print("INPUT NEW TEAM:");
+
+                            String newTeamNameTyped = myTextScanner.nextLine();  // Read user input
+
+                            Team teamFound = null;
+                            for (Team team : allTeams) {
+                                if (team.nameMatches(newTeamNameTyped)) {
+                                    teamFound = team;
+
+
+                                }
+                            }
+                            if (teamFound != null){
+                                coachFound.reasign(teamFound);
+                            }
+                        }
+
+                        if (coachFound == null) {
+                            System.out.println("Coach, " + nameTyped + " not found! Can't produce info!");
+                        } else {
+                            System.out.println(coach);
+
+                            player1.describe();
+                            team1.describe();
+
+                        }
+
+                    } else if (command.equalsIgnoreCase("DONE")) {
+                        stillAsk = false;
+                        continue;
+                    }
+
+                }
 
 
                 player1.describe();
                 team1.describe();
+                team1.updateRecord();
+                player1.makeCaptain(myTextScanner);
 
             }
         }
-
-
-        player1.describe();
-        team1.describe();
-        team1.updateRecord();
-        player1.makeCaptain(myTextScanner);
-
     }
 }
-

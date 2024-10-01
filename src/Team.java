@@ -15,6 +15,13 @@ public class Team {
     String cheer;
     Player newPlayer1;
 
+    boolean nameMatches(String searchText) {
+        if (name.equalsIgnoreCase(searchText)) {
+            return true;
+        }
+        return false;
+    }
+
     void describe(){
     System.out.println("Team: "+ name +" Home: " + home + " Sport: "+ sport +" League: " + league + " Current Players: " + numPlayers +" Coaches: "+ numCoaches);
 

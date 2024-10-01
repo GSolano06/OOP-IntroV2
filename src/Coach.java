@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Coach {
     // fields
     private String name;
@@ -5,6 +7,7 @@ public class Coach {
     private int salary;
     private int yearsCoaching;
     private boolean exPlayer;
+    private ArrayList<Team> coachingHistory;
 
     public Coach(String name, Team team, int salary, int yearsCoaching, boolean exPlayer) {
 
@@ -21,19 +24,13 @@ public class Coach {
         }
         return false;
     }
-    boolean update(Team otherTeam) {
-        if (team.name.equalsIgnoreCase(otherTeam.name)) {
-            return true;
-        }
-        return false;
-    }
 
     void describe() {
         System.out.println("Coach info: " + name + ", is the coach of the " + team.name + ". They have been coaching for " + yearsCoaching + " years. Their salary is " + salary + " a year. Ex-Player = " + exPlayer + ".");
     }
 
 
-    void reasign( Team newTeam) {
+    void reasign(Team newTeam) {
         team = newTeam;
     }
 

@@ -10,7 +10,6 @@ import java.util.Scanner;
     private String sport;
     private String firstName;
     private String lastName;
-
     private boolean captain;
 
     //Constructors
